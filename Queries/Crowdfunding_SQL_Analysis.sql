@@ -8,14 +8,10 @@ ORDER BY backers_count DESC;
 
 -- 2. (2.5 pts)
 -- Using the "backers" table confirm the results in the first query.
-
--- not right yet
-SELECT COUNT(b.backer_id), b.cf_id, cam.backers_count
-FROM campaign AS cam
-JOIN backers AS b
-ON (cam.cf_id = b.cf_id)
-GROUP BY cam.backers_count
-ORDER BY COUNT(b.backer_id) DESC;
+SELECT COUNT (cf_id), cf_id
+FROM backers
+GROUP BY cf_id
+ORDER BY COUNT(cf_id) DESC;
 
 -- 3. (5 pts)
 -- Create a table that has the first and last name, and email address of each contact.
